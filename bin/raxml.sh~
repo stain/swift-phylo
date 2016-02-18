@@ -1,0 +1,4 @@
+#!/bin/bash
+python /home/mondelli/Documents/LNCC/Workflows/sciphy/bin/execute_raxml.py . $1 $2 2 4
+
+

@@ -1,0 +1,2 @@
+#!/bin/bash
+java -jar /home/mondelli/scriptsSwift/sciphy/bin/modelgenerator.jar $1 6 

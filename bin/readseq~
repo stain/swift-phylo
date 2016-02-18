@@ -1,0 +1,2 @@
+#!/bin/bash
+java -jar /home/mondelli/scriptsSwift/sciphy/bin/readseq.jar -all -f=12 $1 -o $2

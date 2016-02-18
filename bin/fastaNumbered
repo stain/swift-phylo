@@ -1,0 +1,2 @@
+#!/bin/bash
+perl /home/mondelli/scriptsSwift/sciphy/bin/numberFasta.pl $1

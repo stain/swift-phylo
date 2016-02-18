@@ -1,0 +1,2 @@
+#!/bin/bash
+python /home/mondelli/scriptsSwift/sciphy/bin/clean_modelgenerator.py $1
