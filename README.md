@@ -17,10 +17,10 @@ This uses the tools:
 
 You can install the required programs and scripts from swift-phylo by running:
 
-> sudo apt-get update
-> sudo apt-get install raxml
-> sudo apt-get install mafft
-> export SWIFT_PHYLO=/path/to/swift-phylo/bin
+- > sudo apt-get update
+- > sudo apt-get install raxml
+- > sudo apt-get install mafft
+- > export SWIFT_PHYLO=/path/to/swift-phylo/bin
 
 Workflow invocation
 ===================
