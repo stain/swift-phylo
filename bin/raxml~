@@ -1,4 +1,0 @@
-#!/bin/bash
-python /home/mondelli/scriptsSwift/sciphy/bin/execute_raxml.py . $1 $2 2 4
-
-

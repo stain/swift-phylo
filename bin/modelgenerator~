@@ -1,2 +1,0 @@
-#!/bin/bash
-java -jar /home/mondelli/Documents/LNCC/Workflows/swiftphy/bin/modelgenerator.jar $1 6 

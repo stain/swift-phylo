@@ -1,2 +1,0 @@
-#!/bin/bash
-perl /home/mondelli/Documents/LNCC/Workflows/swiftphy/bin/numberFasta.pl $1
