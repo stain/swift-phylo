@@ -1,0 +1,16 @@
+swift-phylo
+===========
+
+Workflow for Phylogenetic Analysis using the Swift parallel scripting system.
+
+Example of workflow invocation:
+
+$ swift -config swift.conf swiftPhylo.swift
+
+This uses the tools:
+
+- mafft: http://mafft.cbrc.jp/alignment/software/
+- raxml: http://sco.h-its.org/exelixis/web/software/raxml/index.html
+
+Reference:
+
