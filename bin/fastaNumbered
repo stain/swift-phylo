@@ -1,2 +1,2 @@
 #!/bin/bash
-perl /home/mondelli/scriptsSwift/sciphy/bin/numberFasta.pl $1
+perl ${SWIFT_PHYLO}/numberFasta.pl $1
