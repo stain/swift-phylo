@@ -30,4 +30,3 @@ Run the following command in the directory where the input files are placed:
 
 $ swift -config swift.conf swiftPhylo.swift
 
-
