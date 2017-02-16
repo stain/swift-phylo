@@ -1,4 +1,4 @@
-PREFIX = /home/mluiza/programs/mafft-7.221-with-extensions
+PREFIX = ~/swift-phylo/bin/mafft-7.221-with-extensions
 LIBDIR = $(PREFIX)/libexec/mafft
 BINDIR = $(PREFIX)/bin
 MANDIR = $(PREFIX)/share/man/man1

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export SWIFT_PHYLO=~/swift-phylo/bin
+export PATH=$SWIFT_PHYLO/mafft-7.221-with-extensions/bin:$PATH
+export PATH=$SWIFT_PHYLO/standard-RAxML-master/bin:$PATH
+export PATH=$SWIFT_PHYLO:$PATH
