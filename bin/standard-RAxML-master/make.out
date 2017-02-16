@@ -1,0 +1,25 @@
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o axml.o axml.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o optimizeModel.o optimizeModel.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o multiple.o multiple.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o searchAlgo.o searchAlgo.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o topologies.o topologies.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o parsePartitions.o parsePartitions.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o treeIO.o treeIO.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o models.o models.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o bipartitionList.o bipartitionList.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o rapidBootstrap.o rapidBootstrap.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o evaluatePartialGenericSpecial.o evaluatePartialGenericSpecial.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o evaluateGenericSpecial.o evaluateGenericSpecial.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o newviewGenericSpecial.o newviewGenericSpecial.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o makenewzGenericSpecial.o makenewzGenericSpecial.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o classify.o classify.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX -mavx -c -o fastDNAparsimony.o fastDNAparsimony.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o fastSearch.o fastSearch.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o leaveDropping.o leaveDropping.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o rmqs.o rmqs.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o rogueEPA.o rogueEPA.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o ancestralStates.o ancestralStates.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX -mavx -c -o avxLikelihood.o avxLikelihood.c
+mpicc  -D_WAYNE_MPI -D__SIM_SSE3 -O2 -D_GNU_SOURCE -msse3 -fomit-frame-pointer -funroll-loops -D__AVX   -c -o mem_alloc.o mem_alloc.c
+mpicc  -c -o eigen.o eigen.c 
+mpicc  -o raxmlHPC-MPI-AVX axml.o  optimizeModel.o multiple.o searchAlgo.o topologies.o parsePartitions.o treeIO.o models.o bipartitionList.o rapidBootstrap.o evaluatePartialGenericSpecial.o evaluateGenericSpecial.o newviewGenericSpecial.o makenewzGenericSpecial.o   classify.o fastDNAparsimony.o fastSearch.o leaveDropping.o rmqs.o rogueEPA.o ancestralStates.o avxLikelihood.o  mem_alloc.o eigen.o  -lm  
