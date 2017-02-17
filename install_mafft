@@ -1,6 +1,6 @@
 #/bin/bash
-
-cd swift-phylo/bin/mafft-7.221-with-extensions/core/
+dir=$(pwd)
+cd $dir/bin/mafft-7.221-with-extensions/core/
 make clean
 make
 make install
