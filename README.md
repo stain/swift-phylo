@@ -32,7 +32,7 @@ Run the following command in the directory where the input files are placed:
 swift -config swift.conf swiftPhylo.swift
 ```
 
-The other binaries/applications needed to execute the workflow are in the /bin directory of this repository. You can export them to the system PATH for Swift to recognize them:
+The other binaries/applications needed to execute the workflow are in the /bin directory of this repository. You can export them to the system PATH for Swift to recognize:
 
 ```
 export PATH=<path to /bin>:$PATH
