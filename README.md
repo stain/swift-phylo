@@ -17,17 +17,24 @@ This uses the tools:
 
 You can install the required programs and scripts from swift-phylo by running:
 
-- > sudo apt-get update
-- > sudo apt-get install raxml
-- > sudo apt-get install mafft
-- > export SWIFT_PHYLO=/path/to/swift-phylo/bin
-- > export PATH=$SWIFT_PHYLO:$PATH
+> sudo apt-get update
+> sudo apt-get install raxml
+> sudo apt-get install mafft
+> export SWIFT_PHYLO=/path/to/swift-phylo/bin
+> export PATH=$SWIFT_PHYLO:$PATH
 
 Workflow invocation
 ===================
 
 Run the following command in the directory where the input files are placed:
 
-$ swift -config swift.conf swiftPhylo.swift
+```
+swift -config swift.conf swiftPhylo.swift
+```
 
+The other binaries/applications needed to execute the workflow are in the /bin directory of this repository. You can export them to the system PATH for Swift to recognize them:
+
+```
+export PATH=<path to /bin>:$PATH
+```
 
