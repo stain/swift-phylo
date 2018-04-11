@@ -1,0 +1,35 @@
+#!/bin/bash
+
+db=$1
+
+if [ $# != 1 ]; then
+	echo "***ERROR*** Use: $0 database"
+	exit -1
+fi
+
+SQLITE_CMD="sqlite3 $db"
+
+run_id=$(echo "select script_run_id from script_run order by start_time desc limit 1;" | $SQLITE_CMD)
+
+# Mafft
+mafft --version 2>out.mafft
+mafft=$(grep "v" out | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/')
+rm out.mafft
+# RAXML
+raxml=$(raxmlHPC -v | grep "version" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/')
+# ReadSeq
+readseq=$(java -jar $SWIFT_PHYLO/readseq.jar -v | grep -m 1 "version" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/')
+# ModelGenerator
+model=$(java -jar $SWIFT_PHYLO/modelgenerator.jar -v | grep "v" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/')
+
+# Get id (each app)
+mafft_id=$(echo "select app_exec_id from app_exec where app_name like '%mafft%' and script_run_id like '%$run_id%' limit 1;" | $SQLITE_CMD)
+raxml_id=$(echo "select app_exec_id from app_exec where app_name like '%raxml%' and script_run_id like '%$run_id%' limit 1;" | $SQLITE_CMD)
+readseq_id=$(echo "select app_exec_id from app_exec where app_name like '%readseq%' and script_run_id like '%$run_id%' limit 1;" | $SQLITE_CMD)
+model_id=$(echo "select app_exec_id from app_exec where app_name like '%model%' and script_run_id like '%$run_id%' limit 1;" | $SQLITE_CMD)
+
+# Insert app_annot_text
+echo "insert into app_exec_annot_text values ('$mafft_id', 'version', '$mafft');" | $SQLITE_CMD
+echo "insert into app_exec_annot_text values ('$raxml_id', 'version', '$raxml');" | $SQLITE_CMD
+echo "insert into app_exec_annot_text values ('$readseq_id', 'version', '$readseq');" | $SQLITE_CMD
+echo "insert into app_exec_annot_text values ('$model_id', 'version', '$model');" | $SQLITE_CMD
