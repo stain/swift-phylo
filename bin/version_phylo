@@ -9,11 +9,11 @@ fi
 
 SQLITE_CMD="sqlite3 $db"
 
-run_id=$(echo "select script_run_id from script_run order by start_time desc limit 1;" | $SQLITE_CMD)
+run_id=$(echo "select script_run_id from script_run where filename like 'swiftPhylo%' order by start_time desc limit 1;" | $SQLITE_CMD)
 
 # Mafft
 mafft --version 2>out.mafft
-mafft=$(grep "v" out | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/')
+mafft=$(grep "v" out.mafft | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/')
 rm out.mafft
 # RAXML
 raxml=$(raxmlHPC -v | grep "version" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/')
